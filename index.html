@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1024">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CityInn Hotel</title>
+    <link rel="stylesheet" href="style.css">
+    <script src=
+	"https://smtpjs.com/v3/smtp.js">
+</script>
+
+<script type="text/javascript">
+	function sendEmail() {
+	Email.send({
+		Host: "smtp.elasticemail.com",
+		Username: "adityagurav54@gmail.com",
+		Password: "F0EEAF8A7F59C88BE35C2D5CF696EB4B891D",
+		To: 'cityinn.bmt@gmail.com',
+		From: "adityagurav54@gmail.com",
+		Subject: "Sending Email using javascript",
+		Body:  "Name : "+ document.getElementById("name").value
+                   +"<br> Email : "+document.getElementById("mail").value
+                +"<br> Phone No."+document.getElementById("phone").value
+                +"<br> Message : "+document.getElementById("message").value,
+	})
+		.then(function (message) {
+		alert("mail sent successfully")
+		});
+	}
+</script>
+</head>
+<body>
+    <div class="container">
+        <div class="heading">
+            <div class="heading1">
+                <p>CITYINN</p>
+            </div>
+            <div class="para">
+                <a href="index.html"><button>Home</button></a>
+                <a href="tel:+919322015211" target="blank"><button>Call Us</button></a>
+                <a href="mailto:cityinn.bmt@gmail.com" target="blank"><button>Mail Us</button></a>
+                <a href="https://www.instagram.com" target="blank"><button>Instagram</button></a>
+                <a href="https://www.facebook.com" target="blank"><button>Facebook</button></a>
+                <a href="https://api.whatsapp.com/send?phone=+919322015211" target="blank"><button>Whatsapp</button></a>
+            </div>
+        </div>
+        <div class="heading2">
+            <div class="icon">
+                <img src="logo.png">
+            </div>
+            <div class="icon1">
+                <a href="bookrooms.html"><button>Book Rooms</button></a>
+                <a href="booktables.html"><button>Book Table</button></a>
+            </div>
+        </div>
+    
+        <div class="heading3">
+            <p>Cityinn is known for its bespoke experiences and mark hospitality. We are a local Indian brand contending with the best in class from across the globe. The City-inn exclusively trusts in giving excellent extravagance, quality, and administration. The brand emphasizes consolidating variety with culture.</p>
+        </div>
+        <div class="heading4">
+            <a href="index.html">Restaurant & Bar</a>
+            <a href="index.html">Gym & Fitness</a>
+            <a href="index.html">Banquets</a>
+            <a href="index.html">Rooms & Tours</a>
+        </div>
+        <form class="form" onsubmit="sendEmail(); reset(); return false;">
+            <h1>Contact Us</h1>
+            <input type="text" id="name" placeholder="Full Name">
+            <input type="email" id="mail" placeholder="mail">
+            <input type="text" id="phone" placeholder="Phone No.">
+            <textarea id="message" rows="5" placeholder="How can we help you ?"></textarea>
+            <form method="post">
+                <input type="button" value="Send Email"
+                    onclick="sendEmail()" />
+            </form>
+        </form>
+    </div>
+</div>
+</body>
+</html>
